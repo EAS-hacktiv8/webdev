@@ -141,13 +141,13 @@
         function showForm() {
             /** @type {HTMLElement} */
             let formElement = document.getElementById("dataFormulir");
-            document.getElementById('inputNama').setAttribute("value", document.getElementById('dataNama').innerHTML)
-            document.getElementById('inputRole').setAttribute("value", document.getElementById('dataRole').innerHTML)
-            document.getElementById('inputAvailability').setAttribute("value", document.getElementById('dataAvailability').innerHTML)
-            document.getElementById('inputAge').setAttribute("value", document.getElementById('dataAge').innerHTML)
-            document.getElementById('inputLokasi').setAttribute("value", document.getElementById('dataLokasi').innerHTML)
-            document.getElementById('inputExperience').setAttribute("value", document.getElementById('dataExperience').innerHTML)
-            document.getElementById('inputEmail').setAttribute("value", document.getElementById('dataEmail').innerHTML)
+            document.getElementById('inputNama').value = document.getElementById('dataNama').innerHTML;
+            document.getElementById('inputRole').value = document.getElementById('dataRole').innerHTML;
+            document.getElementById('inputAvailability').value = document.getElementById('dataAvailability').innerHTML;
+            document.getElementById('inputAge').value = document.getElementById('dataAge').innerHTML;
+            document.getElementById('inputLokasi').value = document.getElementById('dataLokasi').innerHTML;
+            document.getElementById('inputExperience').value = document.getElementById('dataExperience').innerHTML;
+            document.getElementById('inputEmail').value = document.getElementById('dataEmail').innerHTML;
             formElement.style.visibility = "visible";
         }
         function hideForm() {
@@ -156,13 +156,13 @@
             formElement.style.visibility = "hidden";
         }
         function updateFormData() {
-            document.getElementById('dataNama').innerHTML = document.getElementById('inputNama').value;
-            document.getElementById('dataRole').innerHTML = document.getElementById('inputRole').value;
-            document.getElementById('dataAvailability').innerHTML = document.getElementById('inputAvailability').value;
-            document.getElementById('dataAge').innerHTML = document.getElementById('inputAge').value;
-            document.getElementById('dataLokasi').innerHTML = document.getElementById('inputLokasi').value;
-            document.getElementById('dataExperience').innerHTML = document.getElementById('inputExperience').value;
-            document.getElementById('dataEmail').innerHTML = document.getElementById('inputEmail').value;
+            document.getElementById('dataNama').innerHTML = document.getElementById('inputNama').value || 'Nama';
+            document.getElementById('dataRole').innerHTML = document.getElementById('inputRole').value || 'Role';
+            document.getElementById('dataAvailability').innerHTML = document.getElementById('inputAvailability').value || 'Availability';
+            document.getElementById('dataAge').innerHTML = document.getElementById('inputAge').value || 'Umur';
+            document.getElementById('dataLokasi').innerHTML = document.getElementById('inputLokasi').value || 'Lokasi';
+            document.getElementById('dataExperience').innerHTML = document.getElementById('inputExperience').value || 'Exp';
+            document.getElementById('dataEmail').innerHTML = document.getElementById('inputEmail').value || 'Email';
             hideForm()
         }
     </script>
