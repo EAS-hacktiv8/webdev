@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        h2,
+        input {
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+
+        ::placeholder {
+            color: white;
+            opacity: 1;
+        }
+
+        img {
+            border-radius: 10%;
+        }
+
+        #pageContainer {
+            display: grid;
+            margin: 50px;
+            gap: 4%;
+            grid-template-columns: 43% 43%;
+        }
+
+        #imageContainer {
+            display: flex;
+            justify-content: end;
+        }
+
+        #formContainer {
+            background-color: blue;
+            padding-top: 50px;
+        }
+
+        #formTitle {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+        }
+
+        #formAllInputContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-input {
+            background-color: blue;
+            line-height: 200%;
+            border-radius: 5px;
+            padding-left: 10px;
+        }
+
+        .form-input-container {
+            width: 75%;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        #formTwoInputContainer {
+            display: grid;
+            width: 75%;
+            gap: 2%;
+            grid-template-columns: 49% 49%;
+        }
+
+        .form-input-secondary {
+            background-color: blue;
+            line-height: 200%;
+            border-radius: 5px;
+            padding-left: 10px;
+            margin-bottom: 15px;
+        }
+
+        #formButton {
+            color: black;
+            background-color: white;
+            margin-top: 10px;
+            width: 30%;
+            border-radius: 5px;
+            line-height: 300%;
+            margin-right: 45%;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="pageContainer">
+        <div id="imageContainer">
+            <img src="./images/product.jpg" id="productImg" width="65%" height="auto" alt="Image of the product" />
+        </div>
+        <div id="formContainer">
+            <form>
+                <div id="formTitle">
+                    <h2>CHECKOUT</h2>
+                </div>
+                <div id="formAllInputContainer">
+                    <div class="form-input-container"><input type="text" required class="form-input"
+                            placeholder="Card Name" />
+                    </div>
+                    <div class="form-input-container"><input type="number" required class="form-input"
+                            placeholder="Card Number" />
+                    </div>
+                    <div class="form-input-container"><input type="text" required class="form-input"
+                            placeholder="Cardholder Name" /></div>
+                    <div id="formTwoInputContainer">
+                        <input type="text" required class="form-input-secondary" placeholder="Expiry Date" />
+                        <input type="number" required class="form-input-secondary" placeholder="CCV" />
+                    </div>
+                    <input type="button" onclick="" id="formButton" value="COMPLETE ORDER">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

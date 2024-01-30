@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        h2,
+        input {
+            font-family: Arial, Helvetica, sans-serif
+        }
+
+        img {
+            border-radius: 10%;
+        }
+
+        #pageContainer {
+            display: flex;
+            padding: 100px;
+        }
+
+        #formContainer {
+            background-color: blue;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        form {
+            flex-grow: 1;
+        }
+
+        #imageContainer {
+            flex-grow: 4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        ::placeholder {
+            color: white;
+            opacity: 1;
+        }
+
+
+        .form-input {
+            color: white;
+            line-height: 200%;
+            background-color: blue;
+            margin-top: 20px;
+            border-radius: 5px;
+            padding-left: 10px;
+        }
+
+        .form-input-secondary {
+            color: white;
+            background-color: blue;
+            line-height: 200%;
+            margin-top: 20px;
+            border-radius: 5px;
+            padding-left: 10px;
+            flex-grow: 1;
+        }
+
+        #formTitle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: larger;
+        }
+
+        #formButton {
+            color: black;
+            background-color: white;
+            margin-top: 30px;
+            width: 50%;
+            border-radius: 5px;
+            line-height: 300%;
+        }
+
+        #formInputContainer {
+            display: flex;
+            margin: 50px;
+            margin-top: 0px;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="pageContainer">
+        <div id="imageContainer">
+            <img src="./images/product.jpg" id="productImg" width="65%" height="auto" alt="Image of the product" />
+        </div>
+        <div id="formContainer">
+            <form>
+                <div id="formTitle">
+                    <h2>CHECKOUT</h2>
+                </div>
+                <div id="formInputContainer">
+                    <input type="text" class="form-input" placeholder="Card Name" />
+                    <input type="text" class="form-input" placeholder="Card Number" />
+                    <input type="text" class="form-input" placeholder="Cardholder Name" />
+                    <div style="display: flex; gap: 15px;">
+                        <input type="text" class="form-input-secondary" placeholder="Expiry Date" />
+                        <input type="text" class="form-input-secondary" placeholder="CCV" />
+                    </div>
+                    <input type="button" onclick="" id="formButton" value="COMPLETE ORDER">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
