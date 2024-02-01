@@ -163,3 +163,111 @@ function listPrima(angkaPertama, angkaKedua) {
     }
     return resultArr;
 }
+
+
+// Callback and promises
+async function fetchUserDataAsync(username, fn) {
+    let url = `https://api.github.com/users/${username}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    fn(data);
+}
+
+function fetchUserDataCallback(username, fn) {
+    let url = `https://api.github.com/users/${username}`;
+    fetch(url).then(function (response) {
+        return response.json();
+    }).then(function (data) {
+        fn(data);
+    }).catch(function (err) {
+        console.log('Error' + JSON.stringify(err));
+    });
+}
+
+function fetchUserDataPromises(username, fn) {
+    let url = `https://api.github.com/users/${username}`;
+    let cbPromise = new Promise((resolve, reject) => {
+        fetch(url).then(function (response) {
+            return response.json();
+        }).then(function (data) {
+            resolve(data);
+        }).catch(function (err) {
+            reject(err);
+        });
+    });
+    cbPromise.then((value) => fn(value));
+    cbPromise.catch((value) => fn(value));
+}
+
+async function fetchUserDataReturnPromises(username){
+    let url = `https://api.github.com/users/${username}`;
+    return new Promise((resolve, reject) => {
+        fetch(url).then(function (response) {
+            return response.json();
+        }).then(function (data) {
+            resolve(data);
+        }).catch(function (err) {
+            reject(err);
+        });
+    });
+}
+function fetchUserDataPromiseCall(username, fn){
+    fetchUserDataReturnPromises(username).then((value) => {
+        fn(value);
+    }).catch(() => {
+        console.log("error");
+    })
+}
+
+function loadImageCallback(url, fn) {
+    let imgNode = document.createElement('img');
+    imgNode.src = url;
+    document.getElementsByTagName('body')[0].appendChild(imgNode);
+    if (imgNode.complete) {
+        fn(true);
+        console.log('berhasil di load');
+    } else {
+        imgNode.addEventListener('load', function () {
+            fn(true);
+            console.log('berhasil di load');
+        })
+        imgNode.addEventListener('error', function () {
+            fn(false);
+            console.log('gagal di load');
+        })
+    }
+}
+
+function loadImagePromise(url, fn) {
+    let imgNode = document.createElement('img');
+    let cbPromise = new Promise((resolve, reject) => {
+        imgNode.src = url;
+        imgNode.onload = () => resolve("success");
+        imgNode.onerror = () => reject("failed");
+    });
+    cbPromise.then((value) => fn(value));
+    cbPromise.catch((value) => fn(value));
+}
+
+async function fetchPosts(){
+    let url = "https://jsonplaceholder.typicode.com/posts";
+    const response = await fetch(url);
+    return response.json();
+}
+async function fetchComments(){
+    let url = "https://jsonplaceholder.typicode.com/comments";
+    const response = await fetch(url);
+    return response.json();
+}
+function lastQuestion(){
+    fetchPosts().then((posts) => {
+        console.log(posts);
+        fetchComments().then((comments) => {
+            console.log(comments);
+        }).catch(() => {
+            console.log("error in getting comments");
+        })
+    }).catch(() => {
+        console.log("error in getting posts");
+    })
+}
