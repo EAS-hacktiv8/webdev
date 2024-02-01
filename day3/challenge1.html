@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="passwordInput" placeholder="password">
+    <input type="button" onclick=checkPassword() value="check password">
+    <br /><br /><br />
+    <input type="text" id="scoreInput" placeholder="score">
+    <input type="button" onclick=checkScore() value="check score">
+    <script>
+        function checkPassword() {
+            var pw = document.getElementById("passwordInput").value;
+            if (pw === "abc123") {
+                alert("benar")
+            } else {
+                alert("salah")
+                window.location = "https://www.google.com"
+            }
+        }
+        function checkScore() {
+            var score = document.getElementById("scoreInput").value;
+            scoreNum = Number(score);
+            if (scoreNum > 80 && scoreNum <= 100) {
+                alert("your grade is A");
+            } else if (scoreNum > 60 && scoreNum <= 80) {
+                alert("your grade is B");
+            } else if (scoreNum > 40 && scoreNum <= 60) {
+                alert("your grade is C");
+            } else if (scoreNum > 0 && scoreNum <= 40) {
+                alert("your grade is D")
+            } else {
+                alert("cannot calculate your grade")
+            }
+        }
+    </script>
+</body>
+
+</html>
