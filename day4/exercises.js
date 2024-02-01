@@ -119,7 +119,7 @@ function urutHurufCustom(text) {
 
 function isArithmeticProgression(numbers) {
     let diff = numbers[1] - numbers[0];
-    for (let i = 0; i < numbers.length - 1; i++) {
+    for (let i = 0; i < numbers.length; i++) {
         const element = numbers[i];
         const nextElement = numbers[i + 1];
         if (nextElement - element !== diff) return false;
@@ -130,8 +130,7 @@ function isArithmeticProgression(numbers) {
 function threeStepsAB(text) {
     let textArr = text.split("");
     let len = textArr.length;
-    for (let i = 0; i < len - 1; i++) {
-        if (i + 4 > len - 1) return false;
+    for (let i = 0; i < len-4; i++) {
         if (textArr[i].toLowerCase() === 'a' && text[i + 4].toLowerCase() === 'b') return true;
         if (textArr[i + 4].toLowerCase() === 'a' && text[i].toLowerCase() === 'b') return true;
     }
