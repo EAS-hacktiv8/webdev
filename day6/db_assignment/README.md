@@ -13,4 +13,4 @@
 ## Extra
 1. [koneksi.php](./tools/koneksi.php) untuk shared connection object ke sql
 2. [./api folder](./api) untuk CRUD API Call
-3. [db_create.sql](db_create.sql) untuk Database export data 
+3. [blog_info.sql](./blog_info.sql) untuk Database export data 
