@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .table_data {
+            padding-left: 15px;
+        }
+
+        #customnav {
+            background-color: #ffffff;
+            margin-bottom: 45px;
+            padding-right: 100px;
+        }
+
+        a {
+            color: black !important;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        #dataNama {
+            font-weight: bold;
+            font-size: larger;
+        }
+
+        body {
+            background-color: #f6f7fc;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg shadow-sm" id="customnav">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse justify-content-end">
+                <ul class="navbar-nav d-flex">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Inventory</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <div class="row card-body">
+                <div class="col-2">
+                    <div class="d-flex flex-column align-items-center text-center">
+                        <div class="image justify-content-center">
+                            <img src="logo.jpg" alt="dev photo" class="rounded-circle" width="120"
+                                height="120" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 d-flex flex-column justify-content-center">
+                    <p class="card-title" id="dataNama">Gehan Syafesi</p>
+                    <p class="card-title text-secondary" id="dataRole">Full Stack Dev</p>
+                    <div class="flex-row" style="padding-top: 20px;">
+                        <input type="button" onclick=showForm() class="col-4 btn btn-primary" value="Edit">
+                        <input type="button" class="col-4 btn btn-outline-success" value="Resume">
+                    </div>
+                </div>
+                <div class="col-6" style="border-left: 2px solid #cccccc;">
+                    <table border="0">
+                        <tbody>
+                            <tr>
+                                <td><b>Availability</b></td>
+                                <td class="table_data" id="dataAvailability">Full Time</td>
+                            </tr>
+                            <tr>
+                                <td><b>Usia</b></td>
+                                <td class="table_data" id="dataAge">25</td>
+                            </tr>
+                            <tr>
+                                <td><b>Lokasi</b></td>
+                                <td class="table_data" id="dataLokasi">Jakarta</td>
+                            </tr>
+                            <tr>
+                                <td><b>Pengalaman</b></td>
+                                <td class="table_data" id="dataExperience">2</td>
+                            </tr>
+                            <tr>
+                                <td><b>Email</b></td>
+                                <td class="table_data" id="dataEmail">email@domain.com</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="dataFormulir" class="card"
+            style="margin-top: 30px; padding-top: 5px; padding-bottom: 25px; visibility: hidden;">
+            <form>
+                <div class="container">
+                    <div class="form-group ms-auto mr-3" id="form-container">
+                        <label for="nama">Nama</label>
+                        <input type="text" name="nama" id="inputNama" class="form-control" />
+                        <label for="role">Role</label>
+                        <input type="text" name="role" id="inputRole" class="form-control" />
+                        <label for="availability">Availability</label>
+                        <input type="text" name="availability" id="inputAvailability" class="form-control" />
+                        <label for="age">Age</label>
+                        <input type="text" name="age" id="inputAge" class="form-control" />
+                        <label for="lokasi">Lokasi</label>
+                        <input type="text" name="lokasi" id="inputLokasi" class="form-control" />
+                        <label for="experience">Years Experience</label>
+                        <input type="text" name="experience" id="inputExperience" class="form-control" />
+                        <label for="email">E-mail</label>
+                        <input type="text" name="email" id="inputEmail" class="form-control" />
+                        <br />
+                        <input type="button" onclick=updateFormData() class="btn btn-success col-12" value="Submit">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        function showForm() {
+            /** @type {HTMLElement} */
+            let formElement = document.getElementById("dataFormulir");
+            document.getElementById('inputNama').value = document.getElementById('dataNama').innerHTML;
+            document.getElementById('inputRole').value = document.getElementById('dataRole').innerHTML;
+            document.getElementById('inputAvailability').value = document.getElementById('dataAvailability').innerHTML;
+            document.getElementById('inputAge').value = document.getElementById('dataAge').innerHTML;
+            document.getElementById('inputLokasi').value = document.getElementById('dataLokasi').innerHTML;
+            document.getElementById('inputExperience').value = document.getElementById('dataExperience').innerHTML;
+            document.getElementById('inputEmail').value = document.getElementById('dataEmail').innerHTML;
+            formElement.style.visibility = "visible";
+        }
+
+        function hideForm() {
+            /** @type {HTMLElement} */
+            let formElement = document.getElementById("dataFormulir");
+            formElement.style.visibility = "hidden";
+        }
+
+        function updateFormData() {
+            let dataNama = document.getElementById('inputNama').value || 'Nama';
+            let dataRole = document.getElementById('inputRole').value || 'Role';
+            let dataAvailability = document.getElementById('inputAvailability').value || 'Availability';
+            let dataAge = document.getElementById('inputAge').value || 25;
+            let dataLokasi = document.getElementById('inputLokasi').value || 'Lokasi';
+            let dataExperience = document.getElementById('inputExperience').value || 0;
+            let dataEmail = document.getElementById('inputEmail').value || 'Email';
+            document.getElementById('dataNama').innerHTML = dataNama;
+            document.getElementById('dataRole').innerHTML = dataRole;
+            document.getElementById('dataAvailability').innerHTML = dataAvailability;
+            document.getElementById('dataAge').innerHTML = dataAge;
+            document.getElementById('dataLokasi').innerHTML = dataLokasi;
+            document.getElementById('dataExperience').innerHTML = dataExperience;
+            document.getElementById('dataEmail').innerHTML = dataEmail;
+            hideForm();
+            $.ajax({
+                url: 'savetodb.php',
+                type: 'POST',
+                data: {
+                    nama: dataNama,
+                    role: dataRole,
+                    availability: dataAvailability,
+                    age: dataAge,
+                    lokasi: dataLokasi,
+                    experience: dataExperience,
+                    email: dataEmail,
+                },
+                success: function (response) {
+                    console.log(response);
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
