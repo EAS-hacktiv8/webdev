@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Gehan Syafesi</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="{{ asset('css/company_styles.css') }}" rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container px-5">
+            <a class="navbar-brand" href="#!">Gehan Syafesi</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="./">Home</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="./contact">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./blog">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Todos</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="bg-dark py-5">
+        <div class="container px-5">
+            <div class="row gx-5 justify-content-center">
+                <div class="col-lg-10">
+                    <div class="text-center my-5">
+                        <h1 class="display-5 fw-bolder text-white mb-2">We even offer modern solutions for making todos
+                            for your business</h1>
+                        <p class="lead text-white-50 mb-4">Our talented engineers have poured years of research on
+                            making the best todos possible. Try our todos NOW!
+                        </p>
+                        <p class="lead text-white-50 mb-4">
+                            JS Highlights:<br/>
+                            1. == & === operator: checking for value of string (todo.js#40)<br/>
+                            2. Ternary Operator: checking for null values in localstorage (todo.js#82)<br/>
+                            3. Functions: function on button click (todo.js#38)<br/>
+                            4. JS Object: creating task object (todo.js#49)<br/>
+                            5. Filter function: filter removed task object in the array (todo.js#87)<br/>
+                            6. foreach loop: looping for init of tasks list in localstorage (todo.js#14)<br/>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="py-5 border-bottom" id="todoSection">
+        <div class="container mt-4">
+            <h2 class="section-heading text-uppercase mt-4 mb-4">To Do List</h2>
+            <form id="todo-form" class="mb-3">
+                <div class="form-group">
+                    <input type="text" id="new-task" class="form-control" placeholder="Tulis tugas di sini" required>
+                </div>
+                <button type="button" class="btn btn-primary mt-4" onclick="addTask()">Tambah</button>
+            </form>
+
+            <ul id="todo-list" class="list-group">
+            </ul>
+        </div>
+    </section>
+    <footer class="py-5 bg-dark">
+        <div class="container px-5">
+            <p class="m-0 text-center text-white">Copyright &copy; Gehan Syafesi 2024</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('js/todo.js') }}"></script>
+</body>
+
+</html>
