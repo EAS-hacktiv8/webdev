@@ -77,5 +77,31 @@ class KontakList
         }
         return true;
     }
+    public function searchContactbyName(string $search){
+        $query = "SELECT * FROM contacts WHERE name LIKE '%".$search."%'";
+        $result = mysqli_query($this->conn, $query);
+        if (!$result) {
+            return [];
+        }
+        $resultArray = mysqli_fetch_all($result);
+        $kontakResult = [];
+        foreach ($resultArray as $kontak) {
+            $kontakResult[] = new Kontak($kontak[0], $kontak[1], $kontak[2], $kontak[3], $kontak[4]);
+        }
+        return $kontakResult;
+    }
+    public function searchContactbyEmail(string $search){
+        $query = "SELECT * FROM contacts WHERE email LIKE '%".$search."%'";
+        $result = mysqli_query($this->conn, $query);
+        if (!$result) {
+            return [];
+        }
+        $resultArray = mysqli_fetch_all($result);
+        $kontakResult = [];
+        foreach ($resultArray as $kontak) {
+            $kontakResult[] = new Kontak($kontak[0], $kontak[1], $kontak[2], $kontak[3], $kontak[4]);
+        }
+        return $kontakResult;
+    }
 }
 $kontaks = new KontakList();
