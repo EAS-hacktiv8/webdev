@@ -17,6 +17,10 @@ KontakList consist of array of Kontak, and has `add`, `edit`, and `delete` funct
 ### contact_{add|delete|edit}.php
 use `kontak.php` to get kontaklist object, then use it's internal function to modify db data.
 
+## DB
+### kontak_mgmt.sql
+export of mysql database
+
 ## Extras
 ### function/birthday_reminder.php
 function to add highlight for birthday in the same month
