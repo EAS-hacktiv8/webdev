@@ -56,7 +56,7 @@
                                 <td>' . $kontak->nama . '</td>
                                 <td>' . $kontak->email . '</td>
                                 <td>' . $kontak->nomor_telepon . '</td>
-                                <td>' . ($kontak->tanggal_lahir ?? '-') . '</td>
+                                <td>' . formatWithBirthdayReminder($kontak->tanggal_lahir ?? null) . '</td>
                                 <td>
                                     <a class="btn btn-sm btn-primary" href="edit.php?id=' . $kontak->id . '">Edit</a>
                                     <a class="btn btn-sm btn-danger" href="api/contact_delete.php?id=' . $kontak->id . '">Delete</a>

@@ -1,5 +1,5 @@
 <?php
-function formatWithBirthdayReminder(string $birthday_string) {
+function formatWithBirthdayReminder($birthday_string) {
     if ($birthday_string == null) {
         return "-";
     }
