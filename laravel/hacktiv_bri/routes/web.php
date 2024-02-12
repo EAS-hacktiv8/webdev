@@ -3,6 +3,7 @@
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\BiodataController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,6 +26,7 @@ Route::resource('/portfolio', PortfolioController::class);
 Route::get('/contacts/search', [ContactController::class, 'searchView']);
 Route::post('/contacts/searchHandler', [ContactController::class, 'search']);
 Route::resource('/contacts', ContactController::class);
+Route::resource('biodata', BiodataController::class);
 
 Route::prefix('tugas')->group(function () {
     Route::get('/user', function () {
