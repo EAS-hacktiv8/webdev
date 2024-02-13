@@ -19,4 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('biodataapi', BiodataApiController::class);
+// Route::apiResource('biodataapi', BiodataApiController::class);
+Route::get('/test-cors', function() {
+    return response()->json(['message' => 'success'], 200);
+});
