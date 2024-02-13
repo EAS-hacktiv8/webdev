@@ -1,8 +1,6 @@
 <?php
 
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\BiodataController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,14 +19,15 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/user', [UserController::class, 'index']);
-Route::resource('/portfolio', PortfolioController::class);
-Route::get('/contacts/search', [ContactController::class, 'searchView']);
-Route::post('/contacts/searchHandler', [ContactController::class, 'search']);
-Route::resource('/contacts', ContactController::class);
-Route::resource('biodata', BiodataController::class);
-
+// Route::resource('biodata', BiodataController::class);
+Route::get('home', function() {
+    return view('auth.home');
+});
 Route::prefix('tugas')->group(function () {
+    Route::get('/contacts/search', [ContactController::class, 'searchView']);
+    Route::post('/contacts/searchHandler', [ContactController::class, 'search']);
+    Route::resource('/contacts', ContactController::class);
+
     Route::get('/user', function () {
         return view('portfolio/user/index');
     });
